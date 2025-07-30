@@ -36,7 +36,7 @@ using KDTree3D = nanoflann::KDTreeSingleIndexAdaptor<
 >;
 
 template<typename Scalar, int Dim, bool fixed_seed>
-std::vector<Eigen::Matrix<Scalar, Dim, 1>> generateRandomPoints(
+std::vector<Eigen::Matrix<Scalar, Dim, 1>> generateRandomPoints1(
         size_t N,
         Scalar min_val = 0,
         Scalar max_val = 1){
@@ -54,18 +54,18 @@ std::vector<Eigen::Matrix<Scalar, Dim, 1>> generateRandomPoints(
     return points;
 }
 
-// 用nanoflann中的Matrix表达数据接口
-using KDTreeMatrix2D = nanoflann::KDTreeEigenMatrixAdaptor<Eigen::Matrix<double, Eigen::Dynamic, 2>, 2>;
-using KDTreeMatrix3D = nanoflann::KDTreeEigenMatrixAdaptor<Eigen::Matrix<double, Eigen::Dynamic, 3>, 3>;
+//// 用nanoflann中的Matrix表达数据接口
+//using KDTreeMatrix2D = nanoflann::KDTreeEigenMatrixAdaptor<Eigen::Matrix<double, Eigen::Dynamic, 2>, 2>;
+//using KDTreeMatrix3D = nanoflann::KDTreeEigenMatrixAdaptor<Eigen::Matrix<double, Eigen::Dynamic, 3>, 3>;
 
 // 写成一个通用矩阵模板
 template <typename Scalar, int Dim>
-using KDTreeEigenMatrixAdaptorT = nanoflann::KDTreeEigenMatrixAdaptor<
+using KDTreeEigenMatrixAdaptor = nanoflann::KDTreeEigenMatrixAdaptor<
         Eigen::Matrix<Scalar, Eigen::Dynamic, Dim>, Dim>;
 
 // 随机生成数据
 template<typename Scalar, int Dim, bool FixedSeed = false>
-Eigen::Matrix<Scalar, Eigen::Dynamic, Dim> generateRandomPoints(
+Eigen::Matrix<Scalar, Eigen::Dynamic, Dim> generateRandomPoints2(
         size_t N,
         Scalar min_val = -1,
         Scalar max_val = 1) {
