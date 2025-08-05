@@ -7,9 +7,13 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #file(GLOB basic_srcs "*.cpp" "*.h")
-#add_executable(kdtree_flann kdtree_flann.cpp)
+add_executable(kdtree_flann kdtree_flann.cpp
+        kdtree_flann.h)
 add_executable(kdtree_nanoflann kdtree_nanoflann.cpp)
 add_executable(kdtree_pcl kdtree_pcl.cpp)
+
+find_package(flann CONFIG REQUIRED)
+target_link_libraries(kdtree_flann PRIVATE flann::flann_s flann_cpp_s)
 
 find_package(nanoflann CONFIG REQUIRED)
 target_link_libraries(kdtree_nanoflann PRIVATE nanoflann::nanoflann)

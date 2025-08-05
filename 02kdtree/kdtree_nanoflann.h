@@ -61,7 +61,8 @@ std::vector<Eigen::Matrix<Scalar, Dim, 1>> generateRandomPoints1(
 // 写成一个通用矩阵模板
 template <typename Scalar, int Dim>
 using KDTreeEigenMatrixAdaptor = nanoflann::KDTreeEigenMatrixAdaptor<
-        Eigen::Matrix<Scalar, Eigen::Dynamic, Dim>, Dim>;
+        Eigen::Matrix<Scalar, Eigen::Dynamic, Dim>,
+        Dim>;
 
 // 随机生成数据
 template<typename Scalar, int Dim, bool FixedSeed = false>
