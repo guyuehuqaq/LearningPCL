@@ -9,6 +9,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Spatial Partitioning and Search Operations with Octrees
 # pcl用octree实现空间区和邻居搜索
-add_executable(pcl_octree_search pcl_octree_search.cpp)
-find_package(PCL REQUIRED)
-target_link_libraries(pcl_octree_search PRIVATE ${PCL_LIBRARIES})
+add_executable(octree_change_detection octree_change_detection.cpp)
+find_package(PCL CONFIG REQUIRED)
+target_link_libraries(octree_change_detection PRIVATE ${PCL_LIBRARIES})
