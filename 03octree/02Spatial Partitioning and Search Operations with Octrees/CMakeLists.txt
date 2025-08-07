@@ -11,4 +11,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # pcl用octree实现空间区和邻居搜索
 add_executable(pcl_octree_search pcl_octree_search.cpp)
 find_package(PCL REQUIRED)
-target_link_libraries(OCTree PRIVATE ${PCL_LIBRARIES})
+target_link_libraries(pcl_octree_search PRIVATE ${PCL_LIBRARIES})
