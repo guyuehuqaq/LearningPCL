@@ -1,7 +1,6 @@
-#include <pcl/io/openni_grabber.h>
+#include <pcl/io/pcd_grabber.h>
 #include <pcl/visualization/cloud_viewer.h>
-
-
+#include <pcl/io/openni2_grabber.h>
 #include <chrono>
 #include <thread>
 
@@ -21,7 +20,8 @@ public:
 
   void run ()
   {
-    pcl::Grabber* interface = new pcl::OpenNIGrabber();
+    //创建OpenNI采集对象
+    pcl::Grabber* interface = new pcl::io::OpenNI2Grabber();
 
     std::function<void (const pcl::PointCloud<pcl::PointXYZ>::ConstPtr&)> f =
         [this] (const pcl::PointCloud<pcl::PointXYZ>::ConstPtr& cloud) { cloud_cb_ (cloud); };

@@ -1,10 +1,10 @@
 # 源码文件强制 LF
-*.cpp text eol=lf
-*.h   text eol=lf
-*.c   text eol=lf
-*.py  text eol=lf
-*.txt text eol=lf
-*.md  text eol=lf
+*.cpp text eol=crlf
+*.h   text eol=crlf
+*.c   text eol=crlf
+*.py  text eol=crlf
+*.txt text eol=crlf
+*.md  text eol=crlf
 
 # 点云和模型文件不要修改换行符
 *.pcd -text

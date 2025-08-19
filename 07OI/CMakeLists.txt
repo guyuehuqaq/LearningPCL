@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 
-# 用octree对点云数据进行压缩, 从点云设备中提取点云数据，压缩并可视化
 project(PCL_OI)
 
 # 设置 C++ 标准
