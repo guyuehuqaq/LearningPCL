@@ -1,0 +1,14 @@
+# 源码文件强制 LF
+*.cpp text eol=lf
+*.h   text eol=lf
+*.c   text eol=lf
+*.py  text eol=lf
+*.txt text eol=lf
+*.md  text eol=lf
+
+# 点云和模型文件不要修改换行符
+*.pcd -text
+*.ply -text
+*.obj -text
+*.stl -text
+*.bin -text
